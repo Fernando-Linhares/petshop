@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalbir Rações</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        /* Custom styling for slider */
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .slider-item {
+            min-width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Header -->
+    <header class="bg-yellow-500 p-2 shadow-md flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <span class="material-icons text-3xl">pets</span>
+            <h1 class="text-white text-xl font-bold">Kalbir Rações</h1>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="text-white hover:text-gray-200">
+                <span class="material-icons">facebook</span>
+            </a>
+            <a href="#" class="text-white hover:text-gray-200">
+                <i class="fi fi-brands-instagram"></i>
+            </a>
+            <a href="#" class="text-white hover:text-gray-200">
+                <span class="material-icons">local_phone</span>
+            </a>
+        
+            <button id="cart-icon" class="text-white hover:text-gray-200 relative max-sm:hidden">
+                <span class="material-icons text-3xl">shopping_cart</span>
+                <span class="cart-count absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2">0</span>
+            </button>
+            <button id="cart-icon-mob" class="text-white hover:text-gray-200 relative max-sm:block hidden">
+                <span class="material-icons text-3xl">shopping_cart</span>
+                <span class="cart-count absolute top-0 right-0 bg-red-500 text-white text-xs rounded-full px-2">0</span>
+            </button>
+        </div>
+    </header>
+    
+    <!-- Slider -->
+    <section class="bg-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="slider-container relative lg:h-[500px]">
+                <div class="slider-track">
+                    <div class="slider-item ">
+                        <img src="assets/banner_image1.jpg" alt="Produto 1" class="block mx-auto w-full lg:h-[500px] rounded-2xl">
+                        <h3 class="text-center mt-2 font-bold">Produto 1</h3>
+                    </div>
+                    <div class="slider-item ">
+                        <img src="assets/banner_image2.jpg" alt="Produto 2" class="block mx-auto  w-full lg:h-[500px] rounded-2xl">
+                        <h3 class="text-center mt-2 font-bold">Produto 2</h3>
+                    </div>
+                    <div class="slider-item ">
+                        <img src="assets/banner_image3.jpg" alt="Produto 3" class="block mx-auto w-full lg:h-[500px] rounded-2xl">
+                        <h3 class="text-center mt-2 font-bold ">Produto 3</h3>
+                    </div>
+                </div>
+                <button id="prev" class="absolute flex top-1/2 left-2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full">
+                    <span class="material-icons">chevron_left</span>
+                </button>
+                <button id="next" class="absolute flex top-1/2 right-2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full">
+                    <span class="material-icons">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-gray-50 py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-6">Informações e Serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Serviço 1 -->
+                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <span class="material-icons text-yellow-500 text-4xl">local_shipping</span>
+                    <div>
+                        <h3 class="text-lg font-bold">Entrega em Domicílio</h3>
+                        <p class="text-gray-600">Receba sua ração e produtos para pets diretamente na sua casa. Garantimos rapidez e segurança no serviço de entrega.</p>
+                    </div>
+                </div>
+                <!-- Serviço 2 -->
+                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <span class="material-icons text-yellow-500 text-4xl">pets</span>
+                    <div>
+                        <h3 class="text-lg font-bold">Produtos de Qualidade</h3>
+                        <p class="text-gray-600">Oferecemos uma ampla variedade de rações, brinquedos, e acessórios para atender todas as necessidades do seu pet.</p>
+                    </div>
+                </div>
+                <!-- Serviço 3 -->
+                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <span class="material-icons text-yellow-500 text-4xl">support</span>
+                    <div>
+                        <h3 class="text-lg font-bold">Atendimento Especializado</h3>
+                        <p class="text-gray-600">Nossa equipe está sempre pronta para ajudar, oferecendo orientações e suporte para cuidar melhor do seu pet.</p>
+                    </div>
+                </div>
+                <!-- Serviço 4 -->
+                <div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow hover:shadow-lg transition">
+                    <span class="material-icons text-yellow-500 text-4xl">eco</span>
+                    <div>
+                        <h3 class="text-lg font-bold">Sustentabilidade</h3>
+                        <p class="text-gray-600">Trabalhamos com produtos sustentáveis e práticas que respeitam o meio ambiente para um futuro melhor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mais Vendidos -->
+    <section class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center mb-6">Mais Vendidos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="product-grid"></div>
+        </div>
+    </section>
+
+    <section class="py-8 flex justify-end px-20">
+        <a href="/pagination.html" class="bg-yellow-500 p-2 rounded flex justify-center items-center text-white hover:bg-yellow-600 space-x-4">
+            <span>
+                Mais produtos
+            </span>
+            <i class="material-icons">
+                arrow_forward
+            </i>
+        </a>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer class="bg-yellow-500 p-4">
+        <div class="container mx-auto text-center">
+            <p class="text-white font-bold">&copy; 2024 Kalbir Rações. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Modal -->
+    <div id="productModal" class="fixed inset-0 flex justify-center bg-black bg-opacity-50 hidden z-50">
+        <div class="bg-white w-full max-w-lg rounded-lg shadow-lg relative p-6 sm:p-8 lg:top-20  lg:h-3/4 grid  items-center">
+        <!-- Close Button -->
+        <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-700">
+            ✕
+        </button>
+    
+        <!-- Product Image -->
+        <div class="flex justify-center">
+            <img id="productImage" src="https://via.placeholder.com/300" alt="Product Image" class="max-w-full h-auto rounded-lg size-[240px]">
+        </div>
+    
+        <!-- Product Details -->
+        <div class="mt-6 m-auto text-center">
+            <h2 id="productTitle" class="text-2xl font-semibold text-gray-800 text-left">Product Title</h2>
+            <p id="productDescription" class="mt-4 text-gray-600 text-left">
+            This is a description of the product. It's detailed, concise, and informative.
+            </p>
+            <div id="productPrice" class="mt-4 text-left text-sm line-through text-gray-400"></div>
+            <div class="mt-2 text-left text-green-600" id="productPriceValue">
+            </div>
+        </div>
+    
+        <!-- Actions -->
+        <div class="mt-6 max-sm:block flex justify-center items-center lg:space-x-2 max-sm:space-y-2">
+            <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 max-sm:flex max-sm:w-full">
+                Pix
+            </button>
+            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 max-sm:flex max-sm:w-full">
+                Cartao de Crédito
+            </button>
+            <button class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 max-sm:flex max-sm:w-full">
+                Boleto
+            </button>
+        </div>
+        </div>
+    </div>
+
+
+    <!-- Cart Overlay -->
+    <div id="cart-overlay" class="fixed top-0 right-0 w-0 h-full bg-white shadow-lg overflow-hidden transition-all duration-300 z-50">
+        <div class="p-4 flex justify-between items-center bg-yellow-500">
+            <h2 class="text-white font-bold text-lg">Seu Carrinho</h2>
+            <button id="close-cart" class="text-white hover:text-gray-200">
+                <span class="material-icons">close</span>
+            </button>
+        </div>
+        <div id="cart-items" class="p-4 overflow-y-auto h-[calc(100%-80px)]">
+            <p class="text-gray-500 text-center">Seu carrinho está vazio.</p>
+        </div>
+        <div class="p-4 border-t">
+            <p id="cart-total" class="text-lg font-bold">Total: R$ 0.00</p>
+            <button class="bg-yellow-500 text-white w-full py-2 rounded hover:bg-yellow-600 mt-2">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- jQuery Slider Script -->
+    <script>
+
+        const calculateValueWithoutPromo = (value, promo) => {
+            let index = promo / 100;
+            let percent = value * index;
+            return value + percent;
+        }
+
+        const products = [
+            {
+                id: 1,
+                name: 'Bola de Cachorro',
+                description: "Bola de Cachorro para brincadeiras divertidas",
+                image: 'bola_cachorro.webp',
+                price: {
+                    value: 20,
+                    promo: 20
+                },
+            },
+            {
+                id: 2,
+                name: 'Osso para Cachorro',
+                description: "Osso para Cachorro para brincadeiras divertidas",
+                image: 'brinquedo_cachorro.webp',
+                price: {
+                    value: 15,
+                    promo: 5
+                },
+            },
+
+            {
+                id: 3,
+                name: 'Gaiola de Gato',
+                description: "Gaiola para transitar com gato com segurança",
+                image: 'gaiola_gato.jpg',
+                price: {
+                    value: 120,
+                    promo: 70
+                },
+            },
+
+            {
+                id: 4,
+                name: 'Gaiola para Passarinho',
+                description: "Bela e grande gaiola para passarinho",
+                image: 'gaiola_pasarinho.jpg',
+                price: {
+                    value: 140,
+                    promo: 20
+                },
+            },
+
+            {
+                id: 5,
+                name: 'Ração de gato Golden',
+                description: "Saborosa Ração de gato Golden",
+                image: 'gato_golden.jpeg',
+                price: {
+                    value: 80,
+                    promo: 20
+                },
+            },
+
+            {
+                id: 6,
+                name: 'Ração Light',
+                description: "Saborosa Ração Light",
+                image: 'racao_lite.jpg',
+                price: {
+                    value: 80,
+                    promo: 50
+                },
+            },
+
+            {
+                id: 7,
+                name: 'Ração Pet Pequeno',
+                description: "Saborosa Ração Pet Pequeno",
+                image: 'racao_pet_pequeno.webp',
+                price: {
+                    value: 60,
+                    promo: 10
+                },
+            },
+            {
+                id: 8,
+                name: 'Ração Pet Grande',
+                description: "Saborosa Ração Pet Grande",
+                image: 'racao_golden.webp',
+                price: {
+                    value: 90,
+                    promo: 70
+                },
+            },
+        ];
+
+        $(document).ready(function () {
+            const $sliderTrack = $('.slider-track');
+            const $slides = $('.slider-item');
+            const slideCount = $slides.length;
+            let currentIndex = 0;
+
+            function updateSliderPosition() {
+                const offset = -currentIndex * 100;
+                $sliderTrack.css('transform', `translateX(${offset}%)`);
+            }
+
+            $('#next').on('click', function () {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateSliderPosition();
+            });
+
+            $('#prev').on('click', function () {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateSliderPosition();
+            });
+
+            $('#openModal').on('click', function () {
+                $('#productModal').removeClass('hidden').addClass('flex');
+            });
+
+            $('#closeModal, #productModal .bg-gray-200').on('click', function () {
+                $('#productModal').removeClass('flex').addClass('hidden');
+            });
+
+
+            products.forEach(product => {
+                let priceWithoutPromo = calculateValueWithoutPromo(product.price.value, product.price.promo);
+                let priceWithoutPromoToBRL = priceWithoutPromo.toLocaleString('pt-br', {style: 'decimal', maximumFractionDigits: 2});
+                $('#product-grid').append(`
+                    <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg">
+                        <img src="./assets/${product.image}" alt="${product.name}" class="rounded size-[340px]">
+                        <h3 class="mt-4 font-bold text-lg">${product.name}</h3>
+                        <p class="text-sm line-through text-gray-400">R$ ${priceWithoutPromoToBRL}</p>
+                        <p class="text-sm text-yellow-500 font-bold">R$ ${product.price.value} (${product.price.promo}% OFF)</p>
+                        <div class="mt-4 flex space-x-2">
+                            <button id="openModal" class="w-1/2 bg-yellow-500 text-white py-2 rounded-lg hover:bg-yellow-600" onclick="showPayment(${product.id})">
+                                Comprar Agora
+                            </button>
+                            <button class="w-1/2 bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300" onclick="addToCart(${product.id})">
+                                Adicionar à Sacola
+                            </button>
+                        </div>
+                    </div>
+                `);
+            });
+            
+
+            function removeFromCart(name) {
+                cart = cart.filter(item => item.name !== name);
+                updateCart();
+            }
+
+            // Toggle Cart Overlay
+            $('#cart-icon').on('click', function () {
+                $('#cart-overlay').css('width', '40%');
+            });
+
+            $('#close-cart').on('click', function () {
+                $('#cart-overlay').css('width', '0');
+            });
+
+            // Toggle Cart Overlay
+            $('#cart-icon-mob').on('click', function () {
+                $('#cart-overlay').css('width', '100%');
+            });
+
+            $('#close-cart-mob').on('click', function () {
+                $('#cart-overlay').css('width', '0');
+            });
+
+
+            // Add to Cart Button
+            $('.add-to-cart').on('click', function () {
+                const name = $(this).data('name');
+                const price = $(this).data('price');
+                addToCart(name, price);
+            });
+
+            // Remove Item from Cart
+            $('#cart-items').on('click', '.remove-item', function () {
+                const name = $(this).data('name');
+                removeFromCart(name);
+            });
+
+            // Initialize
+            updateCart();
+        });
+
+        function showPayment(id) {
+            let product = products.find(p => p.id == id);
+      
+
+            $('#productModal').removeClass('hidden').addClass('flex');
+
+            $('#productImage').attr('src', './assets/' + product.image);
+            $('#productTitle').text(product.name);
+            $('#productDescription').text(product.description);
+
+            let priceWithoutPromo = calculateValueWithoutPromo(product.price.value, product.price.promo);
+            let priceWithoutPromoToBRL = priceWithoutPromo.toLocaleString('pt-br', {style: 'decimal', maximumFractionDigits: 2});
+
+            $('#productPrice').text('R$ ' + priceWithoutPromoToBRL);
+            $('#productPriceValue').text('R$ ' + product.price.value);
+        }
+
+        let cart = [];
+
+
+        function updateCart() {
+            const cartItems = $('#cart-items');
+            const cartCount = $('.cart-count');
+            const cartTotal = $('#cart-total');
+
+            cartItems.empty();
+
+            if (cart.length === 0) {
+                cartItems.html('<p class="text-gray-500 text-center">Seu carrinho está vazio.</p>');
+                cartCount.text(0).hide();
+                cartTotal.text('Total: R$ 0.00');
+            } else {
+                let total = 0;
+
+                cart.forEach(item => {
+                    total += item.price * item.quantity;
+                    cartItems.append(`
+                        <div class="flex justify-between items-center border-b pb-2 mb-2">
+                            <div>
+                                <h3 class="font-bold">${item.name}</h3>
+                                <p class="text-sm">R$ ${item.price.toFixed(2)} x ${item.quantity}</p>
+                            </div>
+                            <button class="remove-item text-red-500" data-name="${item.name}">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </div>
+                    `);
+                });
+
+                let quantity = 0;
+
+                for(let p of cart) {
+                    quantity += p.quantity
+                }
+                
+                cartCount.text(quantity).show();
+                cartTotal.text(`Total: R$ ${total.toFixed(2)}`);
+            }
+        }
+
+        function addToCart(id) {
+
+            let product = products.find(p => p.id == id);
+
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({id: product.id, name: product.name, price: product.price.value, quantity: 1 });
+            }
+
+            updateCart();
+        }
+    </script>
+</body>
+</html>
